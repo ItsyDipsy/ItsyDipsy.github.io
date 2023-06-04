@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="love.css">
+    <title>jasehr</title>
+    <style>
+        #hidden-cards {
+            display: none;
+        }
+
+        button {
+            width: 300px;
+            height: 50px;
+            background-color: #f0f0f0;
+            padding: 10px;
+            border-radius: 5px;
+            margin-bottom: 100px;
+            margin-top: 50px;
+            margin-right: 50px; /* Add margin-right for horizontal space */
+            box-sizing: border-box;
+            box-shadow: 0 0 10px #757c88,
+                        0 0 20px #757c88;
+            background-image: linear-gradient(to right, #FF8CCD, #f582e2, #d7adff, #a8d1ff, #a2daff);
+            background-size: 200% auto;
+            animation: flowingGradient 10s ease infinite;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 0 20px 2px #ff1493;
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+  <section class="wrapper">
+    <div id="stars"></div>
+    <div id="stars2"></div>
+    <div id="stars3"></div>
+  
+  <div class="card-container">
+    <div class="row1">
+      <div class="card large">Baby, sometimes things get rough, and I hope you won't give up. We will overcome every challenge together.</div>
+      <div class="card large">We will continue to grow and learn from the mistakes we make. I hope you will continue to trust in this relationship.</div>
+    </div>
+    <div class="row2" id="hidden-cards">
+      <div class="card">Did you know if gravity were slightly powerful, the universe would collapse into a ball?</div>
+      <div class="card">Also, if gravity were slightly less powerful, the universe would fly apart and there would be no stars or planets.</div>
+      <div class="card">Its just that gravity is precisely as strong as it needs to be. What are the odds that would happen all by ITSELF?</div>
+      <div class="card">Well, there are eight billion people on this planet and you're the perfect girl for me.</div>
+    </div>
+  </div>
+   <div class="night">
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+    <div class="star"></div>
+  </div>
+  <div class="button-container">
+    <button class="neon-button" onclick="revealCards()">ILYSM</button>
+  </div>
+ </section>
+  
+  <script>
+    function revealCards() {
+  var hiddenCards = document.getElementById("hidden-cards");
+  hiddenCards.style.display = "flex";
+
+  var cards = hiddenCards.getElementsByClassName("card");
+  var delay = 0;
+
+  for (var i = 0; i < cards.length; i++) {
+    (function (index) {
+      setTimeout(function () {
+        cards[index].style.opacity = "1";
+        cards[index].style.transform = "translateY(0)";
+      }, delay);
+    })(i);
+    delay += 2000; // Adjust the delay (in milliseconds) between each card appearance
+  }
+}
+  </script>
+</body>
+</html>
